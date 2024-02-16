@@ -16,7 +16,10 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 	response := TimeResponse{Time: currentTime}
 
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	err := json.NewEncoder(w).Encode(response)
+	if err != nil {
+		return
+	}
 }
 
 func main() {
