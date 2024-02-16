@@ -12,8 +12,7 @@ type TimeResponse struct {
 }
 
 func fooHandler(w http.ResponseWriter, r *http.Request) {
-	currentTime := time.Now().Format(time.RFC3339)
-	response := TimeResponse{Time: currentTime}
+	response := TimeResponse{Time: time.Now().Format(time.RFC3339)}
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
@@ -21,5 +20,6 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/time", fooHandler)
-	log.Fatal(http.ListenAndServe(":8795", nil))
+
+	log.Fatal(http.ListenAndServe(":8793", nil))
 }
