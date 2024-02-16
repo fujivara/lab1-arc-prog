@@ -20,6 +20,6 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", fooHandler)
+	http.HandleFunc("/time", fooHandler)
 	log.Fatal(http.ListenAndServe(":8795", nil))
 }
