@@ -1,1 +1,1 @@
-Тест
+First task for programming architectures class
